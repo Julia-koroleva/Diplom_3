@@ -9,7 +9,6 @@ class MainPageLocators:
     list_of_orders = (By.XPATH, "//p[contains(@class, 'AppHeader_header__linkText') and contains(text(), 'Лента')]")
     # Ингредиент 
     ingredient = (By.XPATH, "//img[contains(@class, 'BurgerIngredient_ingredient__image')]")
-    #ingredient = (By.XPATH, "//a[contains(@href, '61c0c5a71d1f82001bdaaa72')]")
     # Клик по крестику
     cross_click = (By.XPATH, '//h2[contains(@class,"text_type_main-large")]/parent::div/parent::div/button[contains(@class, "close")]')
     # Счетчик ингредиентов

@@ -3,11 +3,8 @@ sys.path.append('..')
 import allure
 from locators.locator_order_page import OrderPageLocators
 from .base_page import BasePage
-from selenium.webdriver.support.wait import WebDriverWait
 from urls import *
 from selenium.common.exceptions import ElementClickInterceptedException
-from selenium.webdriver.support import expected_conditions as EC
-
 
 class OrderPage(BasePage):
     def __init__(self, driver):

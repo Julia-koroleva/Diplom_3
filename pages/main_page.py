@@ -2,9 +2,6 @@ import sys
 sys.path.append('..')
 import allure
 from locators.locator_main_page import MainPageLocators
-from locators.locator_order_page import OrderPageLocators
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 from .base_page import BasePage
 from urls import *
 
