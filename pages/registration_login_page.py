@@ -4,9 +4,8 @@ import allure
 from data import *
 from locators.locator_login_page import LoginPageLocators
 from pages.base_page import BasePage
-from pages.main_page import MainPage
 from urls import * 
-from selenium.webdriver.support import expected_conditions as EC
+
 
 
 class LoginPage(BasePage):
