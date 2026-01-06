@@ -13,8 +13,6 @@ class MainPageLocators:
     cross_click = (By.XPATH, '//h2[contains(@class,"text_type_main-large")]/parent::div/parent::div/button[contains(@class, "close")]')
     # Счетчик ингредиентов
     counter_ingredient = (By.XPATH, "//p[contains(@class, 'counter_counter__num')]")
-    # Кнопка "Войти в эккаунт" на главной странице
-    entrance_button = (By.XPATH, "//button[contains(text(), 'Войти в аккаунт')]")
     # Кнопка оформить заказ
     make_order = (By.XPATH,  "//button[contains(text(), 'Оформить заказ')]")
     # Кнопка булки

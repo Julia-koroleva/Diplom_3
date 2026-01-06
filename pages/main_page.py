@@ -13,12 +13,6 @@ class MainPage(BasePage):
     def click_button_constructor(self):
         self.click_element(MainPageLocators.constructor)
         
-
-    @allure.step('Клик по кнопке Войти в эккаунт')
-    def click_entrance_button(self):
-        self.click_element(MainPageLocators.entrance_button)
-     
-    
     @allure.step('Клик по кнопке "Лента заказов" в хедере страницы')
     def click_list_of_orders(self):
         self.click_element(MainPageLocators.list_of_orders)

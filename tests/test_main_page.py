@@ -3,15 +3,14 @@ sys.path.append('..')
 import allure
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
-from pages.registration_login_page import Auth
 from urls import *
 from Diplom_3.conftest import *
 
 class TestMainPage:
     @allure.title('Проверка перехода по клику на "Конструктор')
     @allure.description('Проверка корректности перехода в раздел "Конструктор" по клику на "Конструктор"')
-    def test_constructor_success(self, driver):
-        main_page = Auth.login_user(driver) 
+    def test_constructor_success(self, driver, login):
+        main_page = MainPage(login) 
         order_page = OrderPage(driver)
         order_page.wait_overlay_hidden()
         main_page.click_list_of_orders()
@@ -21,8 +20,8 @@ class TestMainPage:
 
     @allure.title('Проверка перехода по клику на страницу "Лента заказов"')
     @allure.description('Проверка корректности перехода на страницу "Лента заказов" по клику на "Лента заказов"')
-    def test_list_of_orders_success(self, driver):
-        main_page = Auth.login_user(driver) 
+    def test_list_of_orders_success(self, driver, login):
+        main_page = MainPage(login)  
         order_page = OrderPage(driver)
         order_page.wait_overlay_hidden()
         main_page.click_list_of_orders()

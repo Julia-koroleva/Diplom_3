@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 import allure
 from pages.order_page import OrderPage
-from pages.registration_login_page import Auth
+from pages.main_page import MainPage
 from urls import *
 from Diplom_3.conftest import *
 
@@ -10,8 +10,8 @@ from Diplom_3.conftest import *
 class TestOrderPage:
     @allure.title('Проверка  увеличения счётчика «Выполнено за всё время» при создании нового заказа')
     @allure.description('Счетчик «Выполнено за всё время» увеличится если создать новый заказ')
-    def test_check_count_list_of_orders(self, driver):
-        main_page = Auth.login_user(driver) 
+    def test_check_count_list_of_orders(self, driver, login):
+        main_page = MainPage(login) 
         order_page = OrderPage(driver)
         order_page.wait_overlay_hidden()
         main_page.click_list_of_orders()
@@ -27,8 +27,8 @@ class TestOrderPage:
 
     @allure.title('Проверка  увеличения счётчика «Выполнено за сегодня" при создании нового заказа')
     @allure.description('Счетчик «Выполнено за сегодня» увеличится если создать новый заказ')
-    def test_check_count_list_of_orders_today_success(self, driver):
-        main_page = Auth.login_user(driver) 
+    def test_check_count_list_of_orders_today_success(self, driver, login):
+        main_page = MainPage(login) 
         order_page = OrderPage(driver)
         order_page.wait_overlay_hidden()
         main_page.click_list_of_orders()
@@ -45,8 +45,8 @@ class TestOrderPage:
 
     @allure.title('Проверка появление нового заказа в ленте заказов в работе')
     @allure.description('Новый заказ после создания появляется в перечне заказов в работе')
-    def test_check_count_list_of_orders_in_process_success(self, driver):
-        main_page = Auth.login_user(driver) 
+    def test_check_count_list_of_orders_in_process_success(self, driver, login):
+        main_page = MainPage(login) 
         order_page = OrderPage(driver)
         order_page.wait_overlay_hidden()
         main_page.make_order()

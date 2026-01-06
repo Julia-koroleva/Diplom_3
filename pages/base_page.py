@@ -40,3 +40,17 @@ class BasePage():
     def get_element_text(self, locator):
         element = self.wait_for_element(locator)
         return element.text
+    
+    @allure.step ('Обертка для выполнения JavaScript')
+    def execute_script(self, script, *args):
+        return self.driver.execute_script(script, *args)
+    
+    @allure.step ('Клик через JavaScript')
+    def click_via_js(self, element):
+        self.execute_script("arguments[0].click();", element)
+
+    @allure.step ('Загрузка страницы')
+    def load_page(self, page):
+        WebDriverWait(self.driver, 15).until(
+            EC.url_to_be(page)
+        )

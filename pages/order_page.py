@@ -36,7 +36,7 @@ class OrderPage(BasePage):
         try:
             element.click()
         except ElementClickInterceptedException:
-            self.driver.execute_script("arguments[0].click();", element)
+            self.click_via_js(element)
             self.wait_window_hidden()
 
     @allure.step('Получение списка заказов "Выполнено за сегодня"')
